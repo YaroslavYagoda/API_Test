@@ -3,7 +3,6 @@ from random import randint
 
 
 class ChuckJoke:
-
     base_url = 'https://api.chucknorris.io/jokes/random'
     list_of_categories = None
 
@@ -41,6 +40,7 @@ class ChuckJoke:
             assert joke.status_code == 200, \
                 'Ошибка получения случайной шутки'
 
+        joke.encoding = 'utf-8'
         joke_text = joke.json().get("value")
         assert 'Chuck' in joke_text, 'Полученная шутка не про Чака'
         print(f'Шутка:\n\t{joke_text}')
