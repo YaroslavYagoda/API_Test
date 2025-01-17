@@ -5,7 +5,7 @@ class ChuckJoke:
     base_url = 'https://api.chucknorris.io/jokes/random'
     list_of_categories = None
 
-    def get_categories(self):
+    def test_get_categories(self):
         """
         Получаем категории для шуток
         """
@@ -20,7 +20,7 @@ class ChuckJoke:
             categories.encoding = "utf-8"
             self.list_of_categories = categories.json()
 
-    def get_random_joke(self):
+    def test_get_random_joke(self):
         """
         Получение случайной шутки
         """
@@ -33,7 +33,7 @@ class ChuckJoke:
         assert 'Chuck' in joke_text, 'Полученная шутка не про Чака'
         print(f'Шутка:\n\t{joke_text}\n')
 
-    def get_joke_from_selected_category(self, current_category):
+    def test_get_joke_from_selected_category(self, current_category):
         """
         Получение случайной шутки из заданной категории
         :param current_category: категория случайной шутки
@@ -55,26 +55,26 @@ class ChuckJoke:
         else:
             print(f'Шутка:\n\t{joke_text}\n')
 
-    def get_one_joke_from_each_category(self):
+    def test_get_one_joke_from_each_category(self):
         """
         Получение по одной случайно шутке из каждой категории
         """
-        self.get_categories()
+        self.test_get_categories()
         if self.list_of_categories:
             for current_category in self.list_of_categories:
-                self.get_joke_from_selected_category(current_category)
+                self.test_get_joke_from_selected_category(current_category)
 
-    def get_one_joke_from_user_category(self):
+    def test_get_one_joke_from_user_category(self):
         """
         Получение случайной шутки из категории введенной пользователем
         """
-        self.get_categories()
+        self.test_get_categories()
         if self.list_of_categories:
             print('Доступны следующие категории шуток:\n')
             for category in self.list_of_categories:
                 print(category, end=' ')
             current_category = input('\n\nВведите наименование интересующей категории:\n')
             if current_category in self.list_of_categories:
-                self.get_joke_from_selected_category(current_category)
+                self.test_get_joke_from_selected_category(current_category)
             else:
                 print('Указанной категории не существует.')
