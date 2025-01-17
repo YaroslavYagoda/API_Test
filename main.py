@@ -7,5 +7,3 @@ chuck_joke.get_one_joke_from_each_category()
 
 # Следующее ДЗ
 # chuck_joke.get_one_joke_from_user_category()
-
-

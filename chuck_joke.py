@@ -64,7 +64,6 @@ class ChuckJoke:
             for current_category in self.list_of_categories:
                 self.get_joke_from_selected_category(current_category)
 
-
     def get_one_joke_from_user_category(self):
         """
         Получение случайной шутки из категории введенной пользователем
