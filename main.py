@@ -1,6 +1,12 @@
-from chuck_joke import ChuckJoke
+#from chuck_joke import ChuckJoke
 
-chuck_joke = ChuckJoke()
+from academy_place import AcademyPlace
 
 
-chuck_joke.test_get_one_joke_from_user_category()
+test1 = AcademyPlace()
+
+# Запись place_id в файл
+test1.place_id_to_file(4)
+
+# Проверка сохраненных place_id
+test1.test_get_place()
